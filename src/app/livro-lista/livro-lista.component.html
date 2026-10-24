@@ -1,0 +1,51 @@
+<main class="container page-shell py-4 py-md-5">
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+    <div>
+      <p class="text-primary fw-semibold small text-uppercase mb-1">Biblioteca</p>
+      <h1 class="h2 mb-1">Catálogo de Livros</h1>
+      <p class="text-secondary mb-0">{{ livros.length }} {{ livros.length === 1 ? 'livro cadastrado' : 'livros cadastrados' }}</p>
+    </div>
+    <a class="btn btn-primary" routerLink="/dados">＋ Cadastrar livro</a>
+  </div>
+
+  <div class="card overflow-hidden">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Resumo</th>
+            <th scope="col">Editora</th>
+            <th scope="col">Autores</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let livro of livros">
+            <td class="fw-semibold">
+              {{ livro.titulo }}
+              <div>
+                <button class="btn btn-sm btn-outline-danger mt-2" type="button"
+                        (click)="excluir(livro.codigo)"
+                        [attr.aria-label]="'Excluir ' + livro.titulo">
+                  Excluir
+                </button>
+              </div>
+            </td>
+            <td class="text-secondary" style="min-width: 230px">{{ livro.resumo }}</td>
+            <td>{{ obterNome(livro.codEditora) }}</td>
+            <td>
+              <ul class="author-list">
+                <li *ngFor="let autor of livro.autores">{{ autor }}</li>
+              </ul>
+            </td>
+          </tr>
+          <tr *ngIf="livros.length === 0">
+            <td colspan="4" class="text-center text-secondary py-5">
+              Nenhum livro cadastrado. Use “Cadastrar livro” para adicionar o primeiro.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

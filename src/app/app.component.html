@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container page-shell">
+    <a class="navbar-brand fw-semibold" routerLink="/lista">📚 Catálogo</a>
+    <div class="navbar-nav ms-auto flex-row gap-2">
+      <a class="nav-link" routerLink="/lista" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">Catálogo</a>
+      <a class="nav-link" routerLink="/dados" routerLinkActive="active">Novo</a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="text-center text-secondary small py-4">DGT2809 · Catálogo de Livros</footer>

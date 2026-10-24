@@ -1,0 +1,8 @@
+:root { color-scheme: light; }
+body { min-height: 100vh; background: #f5f7fa; color: #202631; }
+.navbar-brand { letter-spacing: .02em; }
+.page-shell { max-width: 1100px; }
+.card { border: 0; box-shadow: 0 8px 28px rgba(31, 45, 61, .08); }
+.table thead th { white-space: nowrap; }
+.author-list { margin: 0; padding-left: 1.15rem; }
+.required-note { font-size: .875rem; }
